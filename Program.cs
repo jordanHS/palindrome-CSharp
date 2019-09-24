@@ -1,34 +1,24 @@
 using System;
+using Palindrome.Models;
 
-public class Program
+namespace Palindrome
 {
-  public static void Main()
+  public class Program
   {
-    Console.WriteLine("Type a word and we'll check wehter it's a palindrome.");
-    string userInput = Console.ReadLine();
-    bool result = isPalindrome(userInput);
-    if(result)
+    public static void Main()
     {
-      Console.WriteLine("This is a palindrome.");
-    }
-    else
-    {
-      Console.WriteLine("This is NOT a palindrome.");
-    }
-  }
-
-  public static bool isPalindrome(string userInput)
-  {
-    char[] wordArray = userInput.ToCharArray();
-    Array.Reverse(wordArray);
-    string reversedWord = new string(wordArray);
-    if (userInput == reversedWord)
-    {
-      return true;
-    }
-    else
-    {
-      return false;
+      Console.WriteLine("Type a word and we'll check wehter it's a palindrome.");
+      string userInput = Console.ReadLine();
+      // Palindromes palindrome = new Palindromes(userInput);
+      bool result = Palindromes.isPalindrome(userInput);
+      if(result)
+      {
+        Console.WriteLine("This is a palindrome.");
+      }
+      else
+      {
+        Console.WriteLine("This is NOT a palindrome.");
+      }
     }
   }
 }
